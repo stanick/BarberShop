@@ -1,0 +1,23 @@
+<h2>Список записавшихся</h2>
+
+<table class = 'table'>
+<thead>
+	<tr>
+	<th>Имя</th>
+	<th>Телефон</th>
+	<th>Время приема</th>
+	<th>Парикмахер</th>
+	</tr>
+</thead>
+<tbody>
+<% @results.each do |item| %>
+	<tr>
+	<td><%= item['username'] %></td>
+	<td><%= item['phone'] %></td>
+	<td><%= item['datestamp'] %></td>
+	<td><%= item['barber'] %></td>
+	</tr>
+<% end%>
+</tbody>
+
+</table>

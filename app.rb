@@ -5,7 +5,7 @@ require 'SQLite3'
 
 def get_db
 db = SQLite3::Database.new ('BarberShop.db')
-db.results_as_hash
+db.results_as_hash = true
 return db
 end
 
@@ -74,3 +74,10 @@ end
 erb "Email: #{@email} Сообщение: #{@message}"
 
 end                                        
+
+
+get '/showusers' do
+db = get_db
+@results = db.execute 'select * from users order by id desc'
+erb :showusers
+end
